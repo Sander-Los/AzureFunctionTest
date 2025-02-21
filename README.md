@@ -1,1 +1,1 @@
-# AzureFunctionTest
+Quick solution for testing out azure functions
