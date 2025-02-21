@@ -26,18 +26,14 @@ namespace AzureFunctionTest
             var response = req.CreateResponse(HttpStatusCode.OK);
             response.Headers.Add("Content-Type", "text/plain; charset=utf-8");
             response.WriteString(message);
-            try
+
+            return new MultiResponse()
             {
-                return new MultiResponse()
-                {
-                    Messages = new string[] { message },
-                    HttpResponse = response
-                };
-            }
-            catch(Exception ex)
-            {
-                return new MultiResponse();
-            }
+                Messages = new string[] { message },
+                HttpResponse = response
+            };
+
+
         }
     }
 
